@@ -2,6 +2,14 @@
   "name": "github-ui-clone",
   "version": "0.1.0",
   "private": true,
+
+  "scripts": {
+    "start": "react-scripts start --open",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -10,18 +18,26 @@
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.53",
     "@types/react-dom": "^16.9.8",
+    "date-fns": "^2.16.1",
+    "history": "^5.0.0",
     "react": "^17.0.1",
+    "react-calendar-heatmap": "^1.8.1",
     "react-dom": "^17.0.1",
+    "react-icons": "^4.1.0",
+    "react-router-dom": "^6.0.0-beta.0",
     "react-scripts": "4.0.1",
+    "styled-components": "^5.2.1",
     "typescript": "^4.0.3",
     "web-vitals": "^0.2.4"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+
+  "devDependencies": {
+    "@types/react-calendar-heatmap": "^1.6.2",
+    "@types/react-icons": "^3.0.0",
+    "@types/react-router-dom": "^5.1.7",
+    "@types/styled-components": "^5.1.7"
   },
+  
   "eslintConfig": {
     "extends": [
       "react-app",
