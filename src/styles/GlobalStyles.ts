@@ -51,6 +51,8 @@ export default createGlobalStyle`
     --vue: #2c3e50;
     --java: #b07219;
     --ruby: #701516;
+    -css: #563d7c;
+    -scss: #c6538c;
     --other-language: #8257e5;
   }
 `;
