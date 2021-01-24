@@ -42,6 +42,7 @@ export const ProfileTop = styled.div`
 `;
 
 export const Avatar = styled.img`
+  margin-top: -34px;
   width: 16%;
   border-radius: 50%;
 
