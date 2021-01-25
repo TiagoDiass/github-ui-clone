@@ -24,11 +24,7 @@ function extractTopRepos(repositories: APIRepo[]): APIRepo[] {
     description: repo.description,
   }));
 
-  const userTop6Repos: APIRepo[] = [];
-
-  for (let i = 0; i <= 5; i++) {
-    userTop6Repos.push(repositoriesWithOnlyNecessaryFields[i]);
-  }
+  const userTop6Repos: APIRepo[] = repositoriesWithOnlyNecessaryFields.slice(0, 6);
 
   return userTop6Repos;
 }
