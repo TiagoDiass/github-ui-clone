@@ -1,5 +1,7 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
+import { APIRepo } from '../../@types';
+import { api } from '../../services';
 
 import {
   Container,
@@ -13,42 +15,70 @@ import {
 } from './Repo.elements';
 
 const Repo: React.FC = () => {
+  const { username, repo: reponame } = useParams();
+  const [repository, setRepository] = useState<APIRepo>();
+  const [loading, setLoading] = useState<Boolean>(false);
+  const [error, setError] = useState('');
+
+  useEffect(() => {
+    setLoading(true);
+
+    api
+      .get(`/repos/${username}/${reponame}`)
+      .then(response => {
+        const repo: APIRepo = response.data;
+        setRepository(repo);
+      })
+      .catch(err => {
+        if (err.response.status === 404) {
+          setError('Repository not found');
+        }
+      })
+      .then(() => {
+        setLoading(false);
+      });
+  }, [username, reponame]);
+
+  if (loading) {
+    return <h1>Loading...</h1>;
+  }
+
+  if (error) {
+    return <h1>{error}</h1>;
+  }
+
   return (
     <Container>
       <BreadCrumb>
         <RepoIcon />
-        <Link className='username' to={`/tiagodiass`}>
-          TiagoDiass
+        <Link className='username' to={`/${username}`}>
+          {username}
         </Link>
 
         <span>/</span>
 
-        <Link className='reponame' to={`/tiagodiass/githui-ui-clone`}>
-          github-ui-clone
+        <Link className='reponame' to={`/${username}/${reponame}`}>
+          {reponame}
         </Link>
       </BreadCrumb>
 
-      <p>Description shit</p>
+      <p>{repository?.description}</p>
 
       <Stats>
         <li>
           <StarIcon />
-          <b>9</b>
+          <b>{repository?.stargazers_count}</b>
           <span>stars</span>
         </li>
 
         <li>
           <ForkIcon />
-          <b>0</b>
+          <b>{repository?.forks}</b>
           <span>forks</span>
         </li>
       </Stats>
 
-      <LinkButton
-        href='https://github.com/TiagoDiass/github-ui-clone'
-        target='_blank'
-        rel='noopener noreferrer'
-      >
+      <LinkButton href={repository?.html_url} target='_blank' rel='noopener noreferrer'>
         <GithubIcon />
         <span>View on Github</span>
       </LinkButton>
