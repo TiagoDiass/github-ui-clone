@@ -100,6 +100,16 @@ export const ProfileInfo = styled.ul`
     text-overflow: ellipsis;
     white-space: nowrap;
   }
+
+  a {
+    margin-left: 5px;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+      color: var(--link);
+    }
+  }
 `;
 
 export const CompanyIcon = styled(RiBuilding4Line)`

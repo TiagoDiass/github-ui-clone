@@ -83,7 +83,9 @@ const ProfileData: React.FC<Props> = ({
         {blog && (
           <li>
             <BlogIcon />
-            <span>{blog}</span>
+            <a href={blog} target='_blank' rel='noopener noreferrer'>
+              {blog}
+            </a>
           </li>
         )}
       </ProfileInfo>
