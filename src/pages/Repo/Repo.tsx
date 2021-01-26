@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { APIRepo } from '../../@types';
+import { Loading } from '../../components';
 import { api } from '../../services';
 
 import {
@@ -40,7 +41,7 @@ const Repo: React.FC = () => {
   }, [username, reponame]);
 
   if (loading) {
-    return <h1>Loading...</h1>;
+    return <Loading />;
   }
 
   if (error) {

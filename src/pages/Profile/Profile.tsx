@@ -14,7 +14,7 @@ import {
   Tab,
 } from './Profile.elements';
 
-import { ProfileData, RandomCalendar, RepoCard } from '../../components';
+import { Loading, ProfileData, RandomCalendar, RepoCard } from '../../components';
 import { APIRepo, APIUser } from '../../@types';
 
 interface Data {
@@ -51,7 +51,7 @@ const Profile: React.FC = () => {
   }
 
   if (!data?.user || !data?.repos) {
-    return <h1>Loading</h1>;
+    return <Loading />;
   }
 
   const TabContent = () => (
