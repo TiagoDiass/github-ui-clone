@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { APIRepo } from '../../@types';
 import { Loading } from '../../components';
-import { api } from '../../services';
+import { useFetch } from '../../hooks';
 
 import {
   Container,
@@ -17,30 +17,9 @@ import {
 
 const Repo: React.FC = () => {
   const { username, repo: reponame } = useParams();
-  const [repository, setRepository] = useState<APIRepo>();
-  const [loading, setLoading] = useState<Boolean>(false);
-  const [error, setError] = useState('');
+  const { data: repository, error } = useFetch<APIRepo>(`/repos/${username}/${reponame}`);
 
-  useEffect(() => {
-    setLoading(true);
-
-    api
-      .get(`/repos/${username}/${reponame}`)
-      .then(response => {
-        const repo: APIRepo = response.data;
-        setRepository(repo);
-      })
-      .catch(err => {
-        if (err.response.status === 404) {
-          setError('Repository not found');
-        }
-      })
-      .then(() => {
-        setLoading(false);
-      });
-  }, [username, reponame]);
-
-  if (loading) {
+  if (!repository) {
     return <Loading />;
   }
 
