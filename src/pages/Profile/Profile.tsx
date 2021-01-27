@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import extractTopRepos from '../../util/extractTopRepos';
 import { APIRepo, APIUser } from '../../@types';
 import { useFetch } from '../../hooks';
@@ -18,7 +18,13 @@ import {
 import { Loading, ProfileData, RandomCalendar, RepoCard } from '../../components';
 
 const Profile: React.FC = () => {
-  const { username = 'TiagoDiass' } = useParams();
+  const { username } = useParams();
+  const navigate = useNavigate();
+
+  if (!username) {
+    navigate(`/TiagoDiass`);
+  }
+
   const { data: user, error: errorUser } = useFetch<APIUser>(`/users/${username}`);
   const { data: repos, error: errorRepo } = useFetch<APIRepo[]>(
     `/users/${username}/repos?per_page=60`,
