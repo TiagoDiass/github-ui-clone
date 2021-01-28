@@ -2,6 +2,6 @@
 
 - [x] Add a loading component
 - [x] Add the SWR cache strategy (stay-while-revalidate)
-- [ ] Add a mini profile card that appears at the hover of the username in the repository page
+- [ ] Add an alert when the requests run into an error
 - [ ] Add state management with Redux
 - [ ] Add tests
