@@ -16,6 +16,7 @@ import {
 } from './Profile.elements';
 
 import { Loading, ProfileData, RandomCalendar, RepoCard } from '../../components';
+import { Toast } from '../../services';
 
 const Profile: React.FC = () => {
   const { username } = useParams();
@@ -30,10 +31,15 @@ const Profile: React.FC = () => {
     `/users/${username}/repos?per_page=60`,
   );
 
-  if (errorUser) {
-    return <h1>{errorUser}</h1>;
-  } else if (errorRepo) {
-    return <h1>{errorRepo}</h1>;
+  if (errorUser || errorRepo) {
+    Toast.fire({
+      icon: 'error',
+      title: 'User not found',
+      willClose: () => {
+        navigate(-1);
+      },
+    });
+    return <></>;
   }
 
   if (!user || !repos) {

@@ -17,6 +17,8 @@ const Header: React.FC<Props> = ({ themeName, setThemeName }) => {
     event.preventDefault();
 
     navigate(`/${search.toLocaleLowerCase().trim()}`);
+
+    setSearch('');
   }
 
   function toggleTheme() {
