@@ -1,8 +1,8 @@
-import React from 'react';
-import { Link, useParams } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { APIRepo } from '../../@types';
 import { Loading } from '../../components';
-import { useFetch } from '../../hooks';
+import { api, Toast } from '../../services';
 
 import {
   Container,
@@ -17,14 +17,43 @@ import {
 
 const Repo: React.FC = () => {
   const { username, repo: reponame } = useParams();
-  const { data: repository, error } = useFetch<APIRepo>(`/repos/${username}/${reponame}`);
+  const [repository, setRepository] = useState<APIRepo>();
+  const [loading, setLoading] = useState<Boolean>(false);
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
 
-  if (!repository) {
+  useEffect(() => {
+    setLoading(true);
+
+    api
+      .get(`/repos/${username}/${reponame}`)
+      .then(response => {
+        const repo: APIRepo = response.data;
+        setRepository(repo);
+      })
+      .catch(err => {
+        if (err.response.status === 404) {
+          setError('Repository not found');
+        }
+      })
+      .then(() => {
+        setLoading(false);
+      });
+  }, [username, reponame]);
+
+  if (loading) {
     return <Loading />;
   }
 
   if (error) {
-    return <h1>{error}</h1>;
+    Toast.fire({
+      icon: 'error',
+      title: 'Repository not found',
+      willClose: () => {
+        navigate(-1);
+      },
+    });
+    return <></>;
   }
 
   return (
