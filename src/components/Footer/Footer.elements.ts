@@ -22,3 +22,12 @@ export const GithubLogo = styled(FaGithub)`
   height: 26px;
   flex-shrink: 0;
 `;
+
+export const Copywrite = styled.div`
+  margin-top: 10px;
+  font-size: 13px;
+`;
+
+export const DevLink = styled.a`
+  color: var(--link);
+`;
