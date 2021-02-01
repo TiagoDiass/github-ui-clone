@@ -7,8 +7,8 @@
 </h4>
 
 <p align="center">
-  <img alt="Repo's top language" src="https://img.shields.io/static/v1?label=Main%20technology&message=TypeScript%2FReact&style=for-the-badge&color=61DBFB&labelColor=000000">
-  <img alt="Repository size" src="https://img.shields.io/static/v1?label=Repo%20size&message=250%20KB&style=for-the-badge&color=61DBFB&labelColor=000000">
+  <img alt="Repo's top language" src="https://img.shields.io/static/v1?label=Main%20technology&message=TypeScript%2FReact&style=for-the-badge&color=2b7489&labelColor=000000">
+  <img alt="Repository size" src="https://img.shields.io/static/v1?label=Repo%20size&message=250%20KB&style=for-the-badge&color=2b7489&labelColor=000000">
 </p>
 
 <p align="center">
@@ -49,7 +49,7 @@ The aim of this project was practicing React, a great tech that I've started lea
   :clipboard: Final Result
 </h2>
 
-### [You can check the final result clicking here](https://react-book-finder.netlify.app/)
+### [You can check the final result clicking here](https://react-github-clone.netlify.app/)
 
 <h2 id="how-to-use" name="how-to-use">
   :information_source: How to Run
