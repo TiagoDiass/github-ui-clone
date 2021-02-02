@@ -43,8 +43,7 @@
   :dart: Project's goal
 </h2>
 
-The aim of this project was practicing React, a great tech that I've started learning recently, with this app, I could practice some concepts like props, conditional rendering, components managment in React, styling with styled components, I enjoyed it really much and I'll keep learning React for sure, I really liked it!
-
+The aim of this project was practicing React with TypeScript, two techs that I'm liking really much and working hard to improve in them.
 <h2 id="final-result" name="final-result">
   :clipboard: Final Result
 </h2>
@@ -59,20 +58,19 @@ Follow the steps below to run the project in your machine, before it all, you ne
 
 ```bash
 # Clone the repo
-$ git clone https://github.com/TiagoDiass/book-finder.git
+$ git clone https://github.com/TiagoDiass/github-ui-clone.git
 
 # Enter in the directory
-$ cd book-finder
+$ cd github-ui-clone
 
 # Install the dependencies
-$ yarn
+$ yarn install
 
 # Start the app
 $ yarn start
 ```
 
-After following these steps, your terminal will show you what port is the app running on(it's usually the 3000), so you'll just need to open your browser
-and open `localhost:3000`. To stop the app just go back to the terminal and press <kbd>CTRL</kbd>+<kbd>C</kbd>.
+After following these steps, your browser will automatically open in `localhost:3000`. To stop the app just go back to the terminal and press <kbd>CTRL</kbd>+<kbd>C</kbd>.
 
 ---
 
