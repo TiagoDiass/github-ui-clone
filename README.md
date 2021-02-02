@@ -15,11 +15,12 @@
   <a href="#technologies">Used Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#objective">Project's goal</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#final-result">Final Result</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#how-to-use">How to Run</a>
+  <a href="#how-to-use">How to Run</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#features">Features</a>
 </p>
 
 <h3 align="center">
-  <img src="Preview.png" width="550">
+  <img src="Preview.png" width="750">
 </h3>
 
 <p align="center">
@@ -44,11 +45,22 @@
 </h2>
 
 The aim of this project was practicing React with TypeScript, two techs that I'm liking really much and working hard to improve in them.
+
 <h2 id="final-result" name="final-result">
-  :clipboard: Final Result
+  :arrow_forward: Final Result
 </h2>
 
 ### [You can check the final result clicking here](https://react-github-clone.netlify.app/)
+
+<h2 id="features" name="features">
+  :clipboard: Features
+</h2>
+
+- Dynamic fetching of a Github user using the Github REST API
+- Dynamic sorting of the top 6 repositories of the user, this top 6 is based on the amount of stars of each repository
+- Light and Dark theme
+- Responsive design
+- Loading animation and errors messages
 
 <h2 id="how-to-use" name="how-to-use">
   :information_source: How to Run
