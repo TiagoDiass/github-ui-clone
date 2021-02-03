@@ -8,7 +8,7 @@
 
 <p align="center">
   <img alt="Repo's top language" src="https://img.shields.io/static/v1?label=Main%20technology&message=TypeScript%2FReact&style=for-the-badge&color=2b7489&labelColor=000000">
-  <img alt="Repository size" src="https://img.shields.io/static/v1?label=Repo%20size&message=250%20KB&style=for-the-badge&color=2b7489&labelColor=000000">
+  <img alt="Repository size" src="https://img.shields.io/static/v1?label=Repo%20size&message=200%20KB&style=for-the-badge&color=2b7489&labelColor=000000">
 </p>
 
 <p align="center">
