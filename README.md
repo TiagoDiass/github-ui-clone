@@ -3,7 +3,7 @@
 </h1>
 
 <h4 align="center">
-  A clone of the user interface of the Github. With the top 6 repositories of a user based on the stars amount of each repository, using the Github API.
+  A functional clone of the user interface of the Github that can show the top 6 repositories of a user based on the stars amount of each repository, using the Github API.
 </h4>
 
 <p align="center">
